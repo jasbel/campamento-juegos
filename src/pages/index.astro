@@ -18,6 +18,7 @@ const allMaterials = [...new Set(games.flatMap(game => game.materials))];
 			<header>
 				<h1>🎮 Juegos del Campamento</h1>
 				<p>60 personas | 3 grupos | 28 juegos organizados</p>
+				<a href="/programa" class="program-link">📅 Ver Programa del Retiro</a>
 			</header>
 
 			<div class="categories-section">
@@ -218,6 +219,23 @@ const allMaterials = [...new Set(games.flatMap(game => game.materials))];
 			header p {
 				font-size: 1.2rem;
 				opacity: 0.9;
+			}
+
+			.program-link {
+				display: inline-block;
+				margin-top: 1rem;
+				padding: 0.75rem 2rem;
+				background: white;
+				color: #667eea;
+				text-decoration: none;
+				border-radius: 8px;
+				font-weight: 600;
+				transition: transform 0.3s, box-shadow 0.3s;
+			}
+
+			.program-link:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 			}
 
 			.categories-section {

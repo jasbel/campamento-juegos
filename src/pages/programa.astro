@@ -1,0 +1,293 @@
+---
+const schedule = {
+	domingo: [
+		{ activity: 'PARTIDA', time: '05:30' },
+		{ activity: 'DESAYUNO', time: '08:30' },
+		{ activity: 'LLEGADA A INKALLAJTA', time: '10:00' },
+		{ activity: '1RA SESIÓN', time: '10:15 - 12:00' },
+		{ activity: 'PASEO', time: '12:00 - 13:30' },
+		{ activity: 'ALMUERZO', time: '13:30 - 14:30' },
+		{ activity: 'PARTIDA/LLEGADA A TOTORA', time: '14:30 - 15:30' },
+		{ activity: 'ORGANIZACIÓN/ACOMODACIÓN', time: '15:30 - 17:30' },
+		{ activity: 'ASEO', time: '17:30 - 18:30' },
+		{ activity: 'CENA', time: '18:30 - 19:30' },
+		{ activity: '2RA SESIÓN', time: '19:30 - 21:00' },
+		{ activity: 'DESCANSO', time: '22:00' },
+	],
+	lunes: [
+		{ activity: 'DESPIERTO', time: '06:30' },
+		{ activity: 'ASEO', time: '06:30 - 07:15' },
+		{ activity: 'DEVOCIONAL', time: '07:15 - 07:45' },
+		{ activity: 'DESAYUNO - APOYO POR GRUPOS', time: '07:45 - 09:00' },
+		{ activity: '3RA SESIÓN', time: '09:00 - 10:30' },
+		{ activity: 'REFRIGERIO', time: '10:30 - 11:00' },
+		{ activity: '4TA SESIÓN', time: '11:00 - 12:30' },
+		{ activity: 'ALMUERZO', time: '12:30 - 14:00' },
+		{ activity: 'ACTIVIDADES DE COMUNIÓN', time: '14:00 - 18:00' },
+		{ activity: 'CENA', time: '18:00 - 19:30' },
+		{ activity: '5TA SESIÓN', time: '19:30 - 21:00' },
+		{ activity: 'FOGATA', time: '21:00 - 22:00' },
+		{ activity: 'DESCANSO', time: '22:00' },
+	],
+	martes: [
+		{ activity: 'DESPIERTO', time: '06:30' },
+		{ activity: 'ASEO', time: '06:30 - 07:15' },
+		{ activity: 'DEVOCIONAL', time: '07:15 - 07:45' },
+		{ activity: 'DESAYUNO - APOYO POR GRUPOS', time: '07:45 - 09:00' },
+		{ activity: '6TA SESIÓN', time: '09:00 - 10:30' },
+		{ activity: 'REFRIGERIO', time: '10:30 - 11:00' },
+		{ activity: '7MA SESIÓN', time: '11:00 - 12:30' },
+		{ activity: 'ALMUERZO', time: '12:30 - 14:00' },
+		{ activity: 'RETORNO', time: '14:00' },
+	],
+};
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Programa - Retiro Juvenil Creciendo en Gracia 2026</title>
+	</head>
+	<body>
+		<div class="container">
+			<a href="/" class="back-link">← Volver a Juegos</a>
+
+			<header>
+				<h1>✝️ CLAMORES DESDE LA CRUZ</h1>
+				<p class="subtitle">IGLESIA BÍBLICA BET-EL</p>
+				<p class="retiro-title">RETIRO JUVENIL CRECIENDO EN GRACIA 2026</p>
+			</header>
+
+			<div class="schedule-container">
+				<div class="day-section">
+					<h2 class="day-title">📅 DOMINGO</h2>
+					<div class="schedule-table">
+						<div class="table-header">
+							<span>Actividad</span>
+							<span>Hora</span>
+						</div>
+						{schedule.domingo.map((item) => (
+							<div class="table-row">
+								<span class="activity">{item.activity}</span>
+								<span class="time">{item.time}</span>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div class="day-section">
+					<h2 class="day-title">📅 LUNES</h2>
+					<div class="schedule-table">
+						<div class="table-header">
+							<span>Actividad</span>
+							<span>Hora</span>
+						</div>
+						{schedule.lunes.map((item) => (
+							<div class="table-row">
+								<span class="activity">{item.activity}</span>
+								<span class="time">{item.time}</span>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div class="day-section">
+					<h2 class="day-title">📅 MARTES</h2>
+					<div class="schedule-table">
+						<div class="table-header">
+							<span>Actividad</span>
+							<span>Hora</span>
+						</div>
+						{schedule.martes.map((item) => (
+							<div class="table-row">
+								<span class="activity">{item.activity}</span>
+								<span class="time">{item.time}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<div class="verse-section">
+				<p class="verse">
+					"Jesús clamó a gran voz, diciendo: Dios mío, Dios mío, ¿Por qué me has desamparado?"
+				</p>
+				<p class="verse-ref">Mateo 27:46</p>
+			</div>
+		</div>
+
+		<style is:global>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+				padding: 2rem 1rem;
+			}
+
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			.back-link {
+				display: inline-block;
+				color: white;
+				text-decoration: none;
+				font-weight: 600;
+				padding: 0.75rem 1.5rem;
+				background: rgba(255, 255, 255, 0.2);
+				border-radius: 8px;
+				margin-bottom: 1.5rem;
+				transition: background 0.3s;
+			}
+
+			.back-link:hover {
+				background: rgba(255, 255, 255, 0.3);
+			}
+
+			header {
+				text-align: center;
+				margin-bottom: 3rem;
+				color: white;
+			}
+
+			header h1 {
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+			}
+
+			.subtitle {
+				font-size: 1.3rem;
+				margin-bottom: 0.5rem;
+				opacity: 0.95;
+			}
+
+			.retiro-title {
+				font-size: 1.1rem;
+				opacity: 0.9;
+				font-weight: 600;
+			}
+
+			.schedule-container {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+			}
+
+			.day-section {
+				background: white;
+				border-radius: 12px;
+				overflow: hidden;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.day-title {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 1.5rem;
+				font-size: 1.5rem;
+				text-align: center;
+			}
+
+			.schedule-table {
+				padding: 0;
+			}
+
+			.table-header {
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				background: #f7fafc;
+				padding: 1rem 1.5rem;
+				font-weight: 600;
+				color: #555;
+				border-bottom: 2px solid #e0e0e0;
+			}
+
+			.table-row {
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				padding: 1rem 1.5rem;
+				border-bottom: 1px solid #f0f0f0;
+				transition: background 0.2s;
+			}
+
+			.table-row:hover {
+				background: #f7fafc;
+			}
+
+			.table-row:last-child {
+				border-bottom: none;
+			}
+
+			.activity {
+				font-weight: 500;
+				color: #2d3748;
+			}
+
+			.time {
+				color: #667eea;
+				font-weight: 600;
+				text-align: right;
+			}
+
+			.verse-section {
+				background: white;
+				padding: 2rem;
+				border-radius: 12px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				margin-top: 2rem;
+				text-align: center;
+			}
+
+			.verse {
+				font-size: 1.2rem;
+				font-style: italic;
+				color: #4a5568;
+				line-height: 1.8;
+				margin-bottom: 1rem;
+			}
+
+			.verse-ref {
+				font-weight: 600;
+				color: #667eea;
+				font-size: 1rem;
+			}
+
+			@media (max-width: 768px) {
+				header h1 {
+					font-size: 1.8rem;
+				}
+
+				.subtitle {
+					font-size: 1.1rem;
+				}
+
+				.table-header,
+				.table-row {
+					grid-template-columns: 1fr;
+					gap: 0.5rem;
+				}
+
+				.time {
+					text-align: left;
+				}
+
+				.day-title {
+					font-size: 1.2rem;
+				}
+			}
+		</style>
+	</body>
+</html>
