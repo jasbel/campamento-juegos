@@ -1,0 +1,26 @@
+# Múltiples Juegos con Cintillos - Tres Pies
+
+Category: Competencia
+
+Description: Juegos de tres pies pero en grupo, robando la cola del oponente
+
+Prompt:
+Game illustration for a church camp activity.
+
+Title: Múltiples Juegos con Cintillos - Tres Pies
+Description: Juegos de tres pies pero en grupo, robando la cola del oponente
+Category: Competencia
+
+Create a colorful, friendly cartoon-style illustration showing people playing this game.
+The scene should be:
+- Set outdoors in a grassy field or camp setting
+- Show diverse group of happy people (teens and young adults)
+- Everyone wearing casual modest summer clothing
+- Bright, cheerful colors
+- Clear visual of the main activity/materials mentioned
+- Family-friendly, church-appropriate style
+- No text or words in the image
+- Wide angle shot showing the full activity
+
+Style: Vibrant cartoon illustration, similar to community event flyers,
+cheerful and energetic, good for church youth group

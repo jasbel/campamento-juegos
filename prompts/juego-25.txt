@@ -1,0 +1,26 @@
+# La Oruga - Carrera en Sacos
+
+Category: Juegos por Filas
+
+Description: El equipo completo tiene que avanzar en conjunto dentro de una costura de sacos o telas
+
+Prompt:
+Game illustration for a church camp activity.
+
+Title: La Oruga - Carrera en Sacos
+Description: El equipo completo tiene que avanzar en conjunto dentro de una costura de sacos o telas
+Category: Juegos por Filas
+
+Create a colorful, friendly cartoon-style illustration showing people playing this game.
+The scene should be:
+- Set outdoors in a grassy field or camp setting
+- Show diverse group of happy people (teens and young adults)
+- Everyone wearing casual modest summer clothing
+- Bright, cheerful colors
+- Clear visual of the main activity/materials mentioned
+- Family-friendly, church-appropriate style
+- No text or words in the image
+- Wide angle shot showing the full activity
+
+Style: Vibrant cartoon illustration, similar to community event flyers,
+cheerful and energetic, good for church youth group

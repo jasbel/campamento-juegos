@@ -1,0 +1,563 @@
+---
+// Juego de Sonidos de Animales
+// Página interactiva para dinámicas juveniles
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Juego de Sonidos de Animales</title>
+	</head>
+	<body>
+		<div class="container">
+			<a href="/" class="back-button">← Volver a todos los juegos</a>
+
+			<!-- Pantalla de Configuración -->
+			<div id="config-screen" class="card">
+				<header class="game-header">
+					<h1>🎮 Juego de Sonidos de Animales</h1>
+					<p class="subtitle">Configura los parámetros para comenzar</p>
+				</header>
+
+				<form id="config-form" class="config-form">
+					<div class="form-group">
+						<label for="players">
+							Cantidad de Jugadores
+							<span class="required">*</span>
+						</label>
+						<input
+							type="number"
+							id="players"
+							name="players"
+							min="1"
+							value="20"
+							required
+							placeholder="Ej: 20"
+						/>
+						<span class="error-message" id="players-error"></span>
+					</div>
+
+					<div class="form-group">
+						<label for="players-per-sound">
+							Jugadores por Sonido
+							<span class="required">*</span>
+						</label>
+						<input
+							type="number"
+							id="players-per-sound"
+							name="players-per-sound"
+							min="1"
+							value="2"
+							required
+							placeholder="Ej: 2"
+						/>
+						<span class="error-message" id="players-per-sound-error"></span>
+					</div>
+
+					<div class="calculated-field">
+						<div class="label">Sonidos Diferentes</div>
+						<div class="value" id="total-sounds">10</div>
+						<div class="note">Total presentaciones: <span id="total-presentaciones">20</span></div>
+						<div class="note">Máximo disponible: 25 sonidos</div>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Empezar Juego</button>
+				</form>
+			</div>
+
+			<!-- Pantalla del Juego -->
+			<div id="game-screen" class="card hidden">
+				<div class="progress-indicator">
+					Presentación <span id="current-number">1</span> de <span id="total-number">20</span>
+				</div>
+
+				<div class="animal-card">
+					<div class="animal-name" id="animal-name">PERRO</div>
+					<div class="animal-sound" id="animal-sound">(gua gua)</div>
+				</div>
+
+				<button id="next-btn" class="btn btn-primary">Siguiente Animal</button>
+				<button id="restart-btn" class="btn btn-secondary">Reiniciar Juego</button>
+			</div>
+		</div>
+
+		<script>
+			// ==========================================
+			// DATOS DE ANIMALES
+			// ==========================================
+			const ANIMALES_BASE = [
+				{ nombre: "Perro", sonido: "ladrido, aullido" },
+				{ nombre: "Gato", sonido: "maullido, ronroneo" },
+				{ nombre: "Vaca", sonido: "muuu" },
+				{ nombre: "Oveja", sonido: "beee" },
+				{ nombre: "Caballo", sonido: "relincho" },
+				{ nombre: "Gallina", sonido: "có-có-có" },
+				{ nombre: "Gallo", sonido: "canto" },
+				{ nombre: "Cerdo", sonido: "gruñido" },
+				{ nombre: "Pato", sonido: "cuac cuac" },
+				{ nombre: "Pájaro", sonido: "silbidos" },
+				{ nombre: "Loro", sonido: "repetición de palabras" },
+				{ nombre: "Búho", sonido: "uh uh" },
+				{ nombre: "Cuervo", sonido: "graznido" },
+				{ nombre: "Mono", sonido: "chillidos" },
+				{ nombre: "Burro", sonido: "rebuzno" },
+				{ nombre: "Cabra", sonido: "meee" },
+				{ nombre: "Rana", sonido: "croar" },
+				{ nombre: "León", sonido: "rugido" },
+				{ nombre: "Lobo", sonido: "aullido" },
+				{ nombre: "Elefante", sonido: "trompeteo" },
+				{ nombre: "Serpiente", sonido: "siseo" },
+				{ nombre: "Abeja", sonido: "zumbido" },
+				{ nombre: "Mosquito", sonido: "zumbido agudo" },
+				{ nombre: "Conejo", sonido: "chillido" },
+				{ nombre: "Tucán", sonido: "tucu tucu" }
+			];
+
+			const MAX_SONIDOS = 25;
+
+			// ==========================================
+			// ESTADO DEL JUEGO
+			// ==========================================
+			let animalesSeleccionados = [];
+			let indiceActual = 0;
+
+			// ==========================================
+			// CÁLCULO DE SONIDOS
+			// ==========================================
+			function calcularSonidosIniciales(jugadores) {
+				if (jugadores <= 50) {
+					return Math.ceil(jugadores / 2);
+				}
+				return Math.ceil(jugadores / 3);
+			}
+
+			function calcularSonidosFinales(jugadores, jugadoresPorSonido) {
+				const sonidos = Math.ceil(jugadores / jugadoresPorSonido);
+				return Math.min(sonidos, MAX_SONIDOS);
+			}
+
+			function actualizarCalculo() {
+				const jugadores = parseInt(document.getElementById('players').value) || 0;
+				const jugadoresPorSonido = parseInt(document.getElementById('players-per-sound').value) || 1;
+
+				const sonidosUnicos = calcularSonidosFinales(jugadores, jugadoresPorSonido);
+				const totalPresentaciones = sonidosUnicos * jugadoresPorSonido;
+
+				document.getElementById('total-sounds').textContent = sonidosUnicos;
+				document.getElementById('total-presentaciones').textContent = totalPresentaciones;
+			}
+
+			// ==========================================
+			// VALIDACIÓN
+			// ==========================================
+			function mostrarError(elementId, mensaje) {
+				const elemento = document.getElementById(elementId);
+				elemento.textContent = mensaje;
+				elemento.classList.add('show');
+			}
+
+			function limpiarErrores() {
+				document.getElementById('players-error').classList.remove('show');
+				document.getElementById('players-per-sound-error').classList.remove('show');
+			}
+
+			function validarConfiguracion(jugadores, jugadoresPorSonido) {
+				if (!jugadores || jugadores < 1) {
+					mostrarError('players-error', 'Debe haber al menos 1 jugador');
+					return false;
+				}
+
+				if (!jugadoresPorSonido || jugadoresPorSonido < 1) {
+					mostrarError('players-per-sound-error', 'Debe ser al menos 1');
+					return false;
+				}
+
+				if (jugadoresPorSonido > jugadores) {
+					mostrarError('players-per-sound-error', 'No puede exceder la cantidad de jugadores');
+					return false;
+				}
+
+				return true;
+			}
+
+			// ==========================================
+			// SELECCIÓN DE ANIMALES
+			// ==========================================
+			function mezclarSinConsecutivos(array) {
+				const resultado = [...array];
+
+				// Primero mezclar aleatoriamente
+				for (let i = resultado.length - 1; i > 0; i--) {
+					const j = Math.floor(Math.random() * (i + 1));
+					[resultado[i], resultado[j]] = [resultado[j], resultado[i]];
+				}
+
+				// Luego asegurar que no haya consecutivos iguales
+				for (let i = 0; i < resultado.length - 1; i++) {
+					let intentos = 0;
+					while (resultado[i].nombre === resultado[i + 1].nombre && intentos < 100) {
+						// Buscar una posición diferente para hacer swap
+						const j = Math.floor(Math.random() * resultado.length);
+						if (j !== i && j !== i + 1) {
+							[resultado[i + 1], resultado[j]] = [resultado[j], resultado[i + 1]];
+						}
+						intentos++;
+					}
+				}
+
+				return resultado;
+			}
+
+			function seleccionarAnimales(cantidadSonidosUnicos, jugadoresPorSonido) {
+				// Seleccionar sonidos únicos
+				const sonidosUnicos = [];
+				const disponibles = [...ANIMALES_BASE];
+				let ultimoIndice = -1;
+
+				for (let i = 0; i < cantidadSonidosUnicos && disponibles.length > 0; i++) {
+					let indice;
+					let intentos = 0;
+
+					do {
+						indice = Math.floor(Math.random() * disponibles.length);
+						intentos++;
+					} while (
+						indice === ultimoIndice &&
+						disponibles.length > 1 &&
+						intentos < 100
+					);
+
+					sonidosUnicos.push(disponibles[indice]);
+					ultimoIndice = indice;
+					disponibles.splice(indice, 1);
+				}
+
+				// Repetir cada sonido según jugadores por sonido
+				const resultado = [];
+				for (const sonido of sonidosUnicos) {
+					for (let i = 0; i < jugadoresPorSonido; i++) {
+						resultado.push(sonido);
+					}
+				}
+
+				// Mezclar sin repetir consecutivos
+				return mezclarSinConsecutivos(resultado);
+			}
+
+			// ==========================================
+			// CONTROL DE UI
+			// ==========================================
+			function mostrarPantallaJuego() {
+				document.getElementById('config-screen').classList.add('hidden');
+				document.getElementById('game-screen').classList.remove('hidden');
+			}
+
+			function mostrarAnimalActual() {
+				const animal = animalesSeleccionados[indiceActual];
+				document.getElementById('animal-name').textContent = animal.nombre.toUpperCase();
+				document.getElementById('animal-sound').textContent = `(${animal.sonido})`;
+				document.getElementById('current-number').textContent = indiceActual + 1;
+				document.getElementById('total-number').textContent = animalesSeleccionados.length;
+			}
+
+			function siguienteAnimal() {
+				if (indiceActual < animalesSeleccionados.length - 1) {
+					indiceActual++;
+					mostrarAnimalActual();
+				} else {
+					alert('¡Juego completado! 🎉');
+					reiniciarJuego();
+				}
+			}
+
+			function iniciarJuego(e) {
+				e.preventDefault();
+				limpiarErrores();
+
+				const jugadores = parseInt(document.getElementById('players').value);
+				const jugadoresPorSonido = parseInt(document.getElementById('players-per-sound').value);
+
+				if (!validarConfiguracion(jugadores, jugadoresPorSonido)) {
+					return;
+				}
+
+				const cantidadSonidosUnicos = parseInt(document.getElementById('total-sounds').textContent);
+				animalesSeleccionados = seleccionarAnimales(cantidadSonidosUnicos, jugadoresPorSonido);
+				indiceActual = 0;
+
+				mostrarAnimalActual();
+				mostrarPantallaJuego();
+			}
+
+			function reiniciarJuego() {
+				animalesSeleccionados = [];
+				indiceActual = 0;
+
+				document.getElementById('players').value = 20;
+				document.getElementById('players-per-sound').value = 2;
+				actualizarCalculo();
+
+				document.getElementById('config-screen').classList.remove('hidden');
+				document.getElementById('game-screen').classList.add('hidden');
+			}
+
+			// ==========================================
+			// INICIALIZACIÓN
+			// ==========================================
+			document.addEventListener('DOMContentLoaded', () => {
+				const playersInput = document.getElementById('players');
+				const playersPerSoundInput = document.getElementById('players-per-sound');
+				const configForm = document.getElementById('config-form');
+				const nextBtn = document.getElementById('next-btn');
+				const restartBtn = document.getElementById('restart-btn');
+
+				playersInput.addEventListener('input', actualizarCalculo);
+				playersPerSoundInput.addEventListener('input', actualizarCalculo);
+
+				configForm.addEventListener('submit', iniciarJuego);
+				nextBtn.addEventListener('click', siguienteAnimal);
+				restartBtn.addEventListener('click', reiniciarJuego);
+
+				actualizarCalculo();
+			});
+		</script>
+
+		<style is:global>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+				padding: 2rem 1rem;
+			}
+
+			.container {
+				max-width: 700px;
+				margin: 0 auto;
+			}
+
+			.back-button {
+				display: inline-flex;
+				align-items: center;
+				color: white;
+				text-decoration: none;
+				font-weight: 600;
+				padding: 0.75rem 1.5rem;
+				background: rgba(255, 255, 255, 0.2);
+				border-radius: 8px;
+				margin-bottom: 2rem;
+				transition: background 0.3s;
+			}
+
+			.back-button:hover {
+				background: rgba(255, 255, 255, 0.3);
+			}
+
+			.card {
+				background: white;
+				border-radius: 16px;
+				box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+				padding: 2.5rem;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			.game-header {
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+
+			.game-header h1 {
+				font-size: 2.5rem;
+				color: #667eea;
+				margin-bottom: 0.5rem;
+			}
+
+			.subtitle {
+				color: #666;
+				font-size: 1.1rem;
+			}
+
+			.config-form {
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+			}
+
+			.form-group {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+
+			.form-group label {
+				font-weight: 600;
+				color: #333;
+				font-size: 1rem;
+			}
+
+			.required {
+				color: #f5576c;
+			}
+
+			.form-group input[type="number"] {
+				padding: 1rem;
+				font-size: 1.1rem;
+				border: 2px solid #e0e0e0;
+				border-radius: 8px;
+				transition: border-color 0.3s;
+			}
+
+			.form-group input[type="number"]:focus {
+				outline: none;
+				border-color: #667eea;
+			}
+
+			.error-message {
+				color: #f5576c;
+				font-size: 0.875rem;
+				display: none;
+			}
+
+			.error-message.show {
+				display: block;
+			}
+
+			.calculated-field {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				padding: 2rem;
+				border-radius: 12px;
+				text-align: center;
+			}
+
+			.calculated-field .label {
+				font-size: 0.9rem;
+				opacity: 0.9;
+				margin-bottom: 0.5rem;
+			}
+
+			.calculated-field .value {
+				font-size: 3rem;
+				font-weight: bold;
+				margin-bottom: 0.5rem;
+			}
+
+			.calculated-field .note {
+				font-size: 0.85rem;
+				opacity: 0.8;
+			}
+
+			.btn {
+				padding: 1.25rem 2rem;
+				font-size: 1.1rem;
+				font-weight: bold;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: transform 0.2s, box-shadow 0.2s;
+			}
+
+			.btn-primary {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+			}
+
+			.btn-primary:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 15px rgba(102, 126, 234, 0.4);
+			}
+
+			.btn-secondary {
+				background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+				color: white;
+				margin-top: 1rem;
+			}
+
+			.btn-secondary:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 15px rgba(245, 87, 108, 0.4);
+			}
+
+			.progress-indicator {
+				text-align: center;
+				font-size: 1.2rem;
+				color: #666;
+				margin-bottom: 2rem;
+				font-weight: 600;
+			}
+
+			.animal-card {
+				background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+				padding: 4rem 2rem;
+				border-radius: 16px;
+				margin-bottom: 2rem;
+				text-align: center;
+				box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+				animation: fadeIn 0.5s;
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.animal-name {
+				font-size: 3.5rem;
+				font-weight: bold;
+				color: #333;
+				margin-bottom: 1.5rem;
+				text-transform: uppercase;
+				letter-spacing: 3px;
+			}
+
+			.animal-sound {
+				font-size: 2rem;
+				color: #555;
+				font-style: italic;
+			}
+
+			@media (max-width: 768px) {
+				.card {
+					padding: 1.5rem;
+				}
+
+				.game-header h1 {
+					font-size: 1.8rem;
+				}
+
+				.animal-name {
+					font-size: 2.5rem;
+					letter-spacing: 1px;
+				}
+
+				.animal-sound {
+					font-size: 1.5rem;
+				}
+
+				.calculated-field .value {
+					font-size: 2.5rem;
+				}
+			}
+		</style>
+	</body>
+</html>

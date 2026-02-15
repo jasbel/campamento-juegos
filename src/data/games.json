@@ -1,0 +1,374 @@
+{
+  "categories": [
+    {
+      "id": "todos",
+      "name": "Todos Juegan",
+      "description": "Todos participan sin formar equipos",
+      "icon": "🎮"
+    },
+    {
+      "id": "postas",
+      "name": "Juegos con Postas",
+      "description": "Rotación cada 10 minutos entre estaciones",
+      "icon": "🔄"
+    },
+    {
+      "id": "postas-linea",
+      "name": "Postas en Línea",
+      "description": "Competencia continua, todos juegan simultáneamente",
+      "icon": "🏃"
+    },
+    {
+      "id": "filas",
+      "name": "Juegos por Filas",
+      "description": "3 equipos participan simultáneamente en línea",
+      "icon": "📏"
+    },
+    {
+      "id": "competencia",
+      "name": "Competencia",
+      "description": "Competencia directa entre grupos",
+      "icon": "🏆"
+    }
+  ],
+  "games": [
+    {
+      "id": "juego-1",
+      "title": "Decisiones Inteligentes",
+      "description": "Juego de estrategia donde los participantes deben tomar decisiones basadas en colores y hojas",
+      "materials": [
+        "4 colores de hojas por participante",
+        "4 mesas"
+      ],
+      "type": "Concentración",
+      "category": "postas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1AFKao/"
+    },
+    {
+      "id": "juego-2",
+      "title": "Cargar Agua con un Ojo Vendado",
+      "description": "El jugador va con un ojo vendado hacia una botella de agua y debe llenarla usando un vasito",
+      "materials": [
+        "1 silla",
+        "1 papel (boom)",
+        "1 botella",
+        "1 vaso",
+        "1 copa"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "postas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1AU2Ve/"
+    },
+    {
+      "id": "juego-3",
+      "title": "5 Platos en Equilibrio",
+      "description": "El jugador sostiene 5 platos entre manos, caderas, rodilla, hombro y cabeza mientras da la vuelta hacia un cono",
+      "materials": [
+        "5 platos",
+        "1 cono"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "postas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1A5L6W/"
+    },
+    {
+      "id": "juego-4",
+      "title": "Banana Ciega - Alimentando al Compañero",
+      "description": "Dos jugadores con los ojos vendados, uno debe alimentar al otro con una banana (juego no competitivo)",
+      "materials": [
+        "1 banana",
+        "1 silla",
+        "2 barbijos/vendas"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "filas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1AxNnv/"
+    },
+    {
+      "id": "juego-5",
+      "title": "Hule y Cuerdas - Carrera en Neumático",
+      "description": "Un participante avanza dentro del hule mientras el otro arrastra el hule por la cuerda",
+      "materials": [
+        "1 hule (neumático)",
+        "1 cuerda"
+      ],
+      "type": "Carrera / Activo",
+      "category": "filas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1ATcye/"
+    },
+    {
+      "id": "juego-6",
+      "title": "Las Puertas - Pasando por el Número",
+      "description": "Cada uno tiene un número de puerta, cuando se instruye un número, los dos extremos deben pasar por esa puerta",
+      "materials": [
+        "Ninguno"
+      ],
+      "type": "Concentración",
+      "category": "filas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1A3LKV/"
+    },
+    {
+      "id": "juego-7",
+      "title": "Pelotitas en el Portahuevos - Puntería",
+      "description": "Se tienen 4 pelotitas y deben apuntar para que ocupen los huecos del portahuevos",
+      "materials": [
+        "5 pelotas",
+        "1 portahuevos"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "postas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1DbQVg/"
+    },
+    {
+      "id": "juego-8",
+      "title": "Túnel de la Pelota con Papel",
+      "description": "Se debe hacer un túnel con papel y pasar 1 pelotita a través de él",
+      "materials": [
+        "Papeles boom"
+      ],
+      "type": "Trabajo en equipo",
+      "category": "postas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1Du4EJ/"
+    },
+    {
+      "id": "juego-9",
+      "title": "Todos Dentro de la Liga",
+      "description": "Todos entran en la liga, dan vuelta y cuando termina la canción deben salir, el último descansa",
+      "materials": [
+        "1 superliga resistente"
+      ],
+      "type": "Carrera / Activo",
+      "category": "todos",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1DVEwR/"
+    },
+    {
+      "id": "juego-10",
+      "title": "Las Tres Botellas - Carrera de Acumulación",
+      "description": "4 jugadores compiten, uno debe obtener 3 botellas en su punto, se van quitando entre participantes",
+      "materials": [
+        "7 botellas de plástico o conos"
+      ],
+      "type": "Carrera / Activo",
+      "category": "competencia",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1DxJyc/"
+    },
+    {
+      "id": "juego-11",
+      "title": "Plato, Chubasquiles y Bombillas",
+      "description": "Juego de puntería usando bombillas para mover chubasquiles hacia un plato",
+      "materials": [
+        "1 plato",
+        "20 chubasquiles (frijoles secos)",
+        "1 bombilla"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "filas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1Ujrm9/"
+    },
+    {
+      "id": "juego-12",
+      "title": "Marcha Continua con Venda en los Ojos",
+      "description": "Deben marchar vendados por un tiempo, permaneciendo en el mismo lugar (ilusión de avanzar)",
+      "materials": [
+        "1 llurex (tela)",
+        "scotch",
+        "venda/barbijo por participante"
+      ],
+      "type": "Concentración",
+      "category": "competencia",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1UVA7s/"
+    },
+    {
+      "id": "juego-13",
+      "title": "Granja de Animales - Encontrando tu Pareja",
+      "description": "Cada jugador tiene un nombre de animal y debe imitar el sonido para buscar sus parejas",
+      "materials": [
+        "Cintillo/venda/barbijo por participante (60 total)"
+      ],
+      "type": "Creatividad",
+      "category": "todos",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1UPyED/"
+    },
+    {
+      "id": "juego-14",
+      "title": "Protegiendo las Pelotas - Defensa en el Hule",
+      "description": "Un jugador defiende las pelotitas alrededor del hule contra el grupo oponente, gana quien roba más rápido o aguanta más tiempo",
+      "materials": [
+        "7 pelotitas",
+        "1 hule",
+        "2 tubos esponjados"
+      ],
+      "type": "Trabajo en equipo",
+      "category": "competencia",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1UxqxD/"
+    },
+    {
+      "id": "juego-15",
+      "title": "Laberinto",
+      "description": "El grupo o jugadores selectos deben llenar el Laberinto y completarlo",
+      "materials": [
+        "Crucigramas en papel boom por grupo",
+        "1 masking",
+        "Lana/liga rígida"
+      ],
+      "type": "Mesa / Intelectual",
+      "category": "postas",
+      "tiktokUrl": "https://vt.tiktok.com/ZSm1ysWXM/"
+    },
+    {
+      "id": "juego-16",
+      "title": "Alfabeto Bíblico - Carrera de Nombres",
+      "description": "Se tiene el alfabeto, el grupo en fila corre para llenar con nombres bíblicos",
+      "materials": [
+        "1 papelografo por grupo",
+        "1 marcador"
+      ],
+      "type": "Mesa / Intelectual",
+      "category": "postas",
+      "tiktokUrl": "https://www.tiktok.com/@josselyncarmen/video/7595407652067347732"
+    },
+    {
+      "id": "juego-17",
+      "title": "Par de Números - Buscando tu Compañero",
+      "description": "Se les da un número a cada jugador, deben buscar su número y cuando lo encuentran, deben sentarse juntos",
+      "materials": [
+        "Números preparados"
+      ],
+      "type": "Creatividad",
+      "category": "todos",
+      "tiktokUrl": "https://www.tiktok.com/@upg.jovenes.en.accion/video/7429588501861043461"
+    },
+    {
+      "id": "juego-18",
+      "title": "Puestos los Ojos - Manteniendo el Globo en el Aire",
+      "description": "Los globos siempre deben estar flotando mientras se recogen papeles de basura",
+      "materials": [
+        "1 globo por grupo",
+        "1 basurero por grupo",
+        "Papeles que no sirven"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "competencia",
+      "tiktokUrl": "https://www.tiktok.com/@mclaluzdelmundo/video/7554827025685531915"
+    },
+    {
+      "id": "juego-19",
+      "title": "Absorber el Papel con Bombilla",
+      "description": "Se debe transportar papelitos con la bombilla usando succión",
+      "materials": [
+        "1 mesa grande",
+        "Papeles del color del equipo",
+        "Tijera para cortar",
+        "1 recipiente por grupo",
+        "1 bombilla por participante"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "postas-linea",
+      "tiktokUrl": "https://www.tiktok.com/@jni_lascolinas_hn/video/7554190126222724408"
+    },
+    {
+      "id": "juego-20",
+      "title": "Estrella - Juego de Agilidad y Números",
+      "description": "El líder dicta un número, corren los jugadores con el número apropiado, dan una vuelta e ingresan por las entrepiernas de su equipo",
+      "materials": [
+        "1 botella/pañuelo/almohadilla"
+      ],
+      "type": "Carrera / Activo",
+      "category": "competencia",
+      "tiktokUrl": "https://www.tiktok.com/@eventoshappyteam/video/7331037125506354438"
+    },
+    {
+      "id": "juego-21",
+      "title": "Desenvolviendo Papeles Arrugados en Parejas",
+      "description": "El par de jugadores se abrazan con una mano, la otra mano debe desenvolver el papel arrugado",
+      "materials": [
+        "Papeles que no sirven",
+        "Mesa"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "competencia",
+      "tiktokUrl": "https://www.tiktok.com/@mclaluzdelmundo/video/7594098085043653896"
+    },
+    {
+      "id": "juego-22",
+      "title": "Pendiente - Juego 22",
+      "description": "Información pendiente de completar",
+      "materials": [
+        "Pendiente"
+      ],
+      "type": "Creatividad",
+      "category": "todos",
+      "tiktokUrl": "PENDIENTE"
+    },
+    {
+      "id": "juego-23",
+      "title": "Por Números - Carrera por la Botella",
+      "description": "Por números, se debe decir un número y los equipos salen para recoger la botella/cono y no ser tocado, debe escapar a su sitio",
+      "materials": [
+        "1 botella"
+      ],
+      "type": "Carrera / Activo",
+      "category": "competencia",
+      "tiktokUrl": "https://www.tiktok.com/@iglesia.buenas.nuevas/video/7510087301544873234"
+    },
+    {
+      "id": "juego-24",
+      "title": "Pasando la Harina en Fila",
+      "description": "El grupo en fila pasa la harina de mano en mano por encima de la cabeza, hasta acumular cierta cantidad",
+      "materials": [
+        "1 balde de harina",
+        "8 platos"
+      ],
+      "type": "Carrera / Activo",
+      "category": "filas",
+      "tiktokUrl": "https://www.tiktok.com/@xplorando/video/7314645105812458758"
+    },
+    {
+      "id": "juego-25",
+      "title": "La Oruga - Carrera en Sacos",
+      "description": "El equipo completo tiene que avanzar en conjunto dentro de una costura de sacos o telas",
+      "materials": [
+        "Costura de sacos o telas"
+      ],
+      "type": "Trabajo en equipo",
+      "category": "filas",
+      "tiktokUrl": "https://www.tiktok.com/@xplorando/video/7314263946523856134"
+    },
+    {
+      "id": "juego-26",
+      "title": "Múltiples Juegos con Cintillos - Tres Pies",
+      "description": "Juegos de tres pies pero en grupo, robando la cola del oponente",
+      "materials": [
+        "1 pañoleta/cintillo por participante (60 total)"
+      ],
+      "type": "Trabajo en equipo",
+      "category": "competencia",
+      "tiktokUrl": "https://www.tiktok.com/@xplorando/video/7180449382884576517"
+    },
+    {
+      "id": "juego-27",
+      "title": "Multioctopus - Transporte de Agua en Grupo",
+      "description": "Grupos de 7 personas envueltas en sogas deben recoger agua de un balde con un vasito y llevarla a otro balde",
+      "materials": [
+        "7 vasos",
+        "1 soga",
+        "2 baldes"
+      ],
+      "type": "Trabajo en equipo",
+      "category": "filas",
+      "tiktokUrl": "https://www.tiktok.com/@israel.bapat/video/7567479670942321976"
+    },
+    {
+      "id": "juego-28",
+      "title": "Reyes y Coronas - Equilibrio de Vasos",
+      "description": "Cada jugador tiene vasos en la cabeza, no deben caer o será descalificado",
+      "materials": [
+        "60 vasos",
+        "3 colores"
+      ],
+      "type": "Habilidad / Destreza",
+      "category": "competencia",
+      "tiktokUrl": "https://www.tiktok.com/@masimpulsogo/video/7504439814482185478"
+    }
+  ]
+}

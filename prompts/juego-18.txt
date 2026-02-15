@@ -1,0 +1,26 @@
+# Puestos los Ojos - Manteniendo el Globo en el Aire
+
+Category: Competencia
+
+Description: Los globos siempre deben estar flotando mientras se recogen papeles de basura
+
+Prompt:
+Game illustration for a church camp activity.
+
+Title: Puestos los Ojos - Manteniendo el Globo en el Aire
+Description: Los globos siempre deben estar flotando mientras se recogen papeles de basura
+Category: Competencia
+
+Create a colorful, friendly cartoon-style illustration showing people playing this game.
+The scene should be:
+- Set outdoors in a grassy field or camp setting
+- Show diverse group of happy people (teens and young adults)
+- Everyone wearing casual modest summer clothing
+- Bright, cheerful colors
+- Clear visual of the main activity/materials mentioned
+- Family-friendly, church-appropriate style
+- No text or words in the image
+- Wide angle shot showing the full activity
+
+Style: Vibrant cartoon illustration, similar to community event flyers,
+cheerful and energetic, good for church youth group

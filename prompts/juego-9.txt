@@ -1,0 +1,26 @@
+# Todos Dentro de la Liga
+
+Category: Todos Juegan
+
+Description: Todos entran en la liga, dan vuelta y cuando termina la canción deben salir, el último descansa
+
+Prompt:
+Game illustration for a church camp activity.
+
+Title: Todos Dentro de la Liga
+Description: Todos entran en la liga, dan vuelta y cuando termina la canción deben salir, el último descansa
+Category: Todos Juegan
+
+Create a colorful, friendly cartoon-style illustration showing people playing this game.
+The scene should be:
+- Set outdoors in a grassy field or camp setting
+- Show diverse group of happy people (teens and young adults)
+- Everyone wearing casual modest summer clothing
+- Bright, cheerful colors
+- Clear visual of the main activity/materials mentioned
+- Family-friendly, church-appropriate style
+- No text or words in the image
+- Wide angle shot showing the full activity
+
+Style: Vibrant cartoon illustration, similar to community event flyers,
+cheerful and energetic, good for church youth group

@@ -1,0 +1,26 @@
+# Protegiendo las Pelotas - Defensa en el Hule
+
+Category: Competencia
+
+Description: Un jugador defiende las pelotitas alrededor del hule contra el grupo oponente, gana quien roba más rápido o aguanta más tiempo
+
+Prompt:
+Game illustration for a church camp activity.
+
+Title: Protegiendo las Pelotas - Defensa en el Hule
+Description: Un jugador defiende las pelotitas alrededor del hule contra el grupo oponente, gana quien roba más rápido o aguanta más tiempo
+Category: Competencia
+
+Create a colorful, friendly cartoon-style illustration showing people playing this game.
+The scene should be:
+- Set outdoors in a grassy field or camp setting
+- Show diverse group of happy people (teens and young adults)
+- Everyone wearing casual modest summer clothing
+- Bright, cheerful colors
+- Clear visual of the main activity/materials mentioned
+- Family-friendly, church-appropriate style
+- No text or words in the image
+- Wide angle shot showing the full activity
+
+Style: Vibrant cartoon illustration, similar to community event flyers,
+cheerful and energetic, good for church youth group

@@ -1,0 +1,26 @@
+# Túnel de la Pelota con Papel
+
+Category: Juegos con Postas
+
+Description: Se debe hacer un túnel con papel y pasar 1 pelotita a través de él
+
+Prompt:
+Game illustration for a church camp activity.
+
+Title: Túnel de la Pelota con Papel
+Description: Se debe hacer un túnel con papel y pasar 1 pelotita a través de él
+Category: Juegos con Postas
+
+Create a colorful, friendly cartoon-style illustration showing people playing this game.
+The scene should be:
+- Set outdoors in a grassy field or camp setting
+- Show diverse group of happy people (teens and young adults)
+- Everyone wearing casual modest summer clothing
+- Bright, cheerful colors
+- Clear visual of the main activity/materials mentioned
+- Family-friendly, church-appropriate style
+- No text or words in the image
+- Wide angle shot showing the full activity
+
+Style: Vibrant cartoon illustration, similar to community event flyers,
+cheerful and energetic, good for church youth group
