@@ -18,7 +18,11 @@ const allMaterials = [...new Set(games.flatMap(game => game.materials))];
 			<header>
 				<h1>🎮 Juegos del Campamento</h1>
 				<p>60 personas | 3 grupos | 28 juegos organizados</p>
-				<a href="/programa" class="program-link">📅 Ver Programa del Retiro</a>
+				<div class="header-links">
+					<a href="/programa" class="program-link">📅 Programa del Retiro</a>
+					<a href="/totora" class="program-link totora-link">🏘️ Guía de Totora</a>
+					<a href="/incallajta" class="program-link incallajta-link">🏛️ Guía de Incallajta</a>
+				</div>
 			</header>
 
 			<div class="categories-section">
@@ -221,9 +225,16 @@ const allMaterials = [...new Set(games.flatMap(game => game.materials))];
 				opacity: 0.9;
 			}
 
+			.header-links {
+				display: flex;
+				gap: 1rem;
+				justify-content: center;
+				margin-top: 1rem;
+				flex-wrap: wrap;
+			}
+
 			.program-link {
 				display: inline-block;
-				margin-top: 1rem;
 				padding: 0.75rem 2rem;
 				background: white;
 				color: #667eea;
@@ -236,6 +247,16 @@ const allMaterials = [...new Set(games.flatMap(game => game.materials))];
 			.program-link:hover {
 				transform: translateY(-2px);
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+			}
+
+			.totora-link {
+				background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+				color: white;
+			}
+
+			.incallajta-link {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
 			}
 
 			.categories-section {
