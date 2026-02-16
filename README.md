@@ -405,10 +405,14 @@ yo tengo una pulga.
 dinamicas para que presenten.
 se lanzan los papelito se recoge y van a buscar con el nombre, nombre - apellido - iglesia
 
-telaarania.
+dinamicas para romper el hielo
+telarania.
+2 grupos mujeres.hombre.  a ciegas, filarse segun tamanio.
+
+
 
 penitencia.
 se murio pepe, hazta que uno se ria.
 
 
-amor machape - temperas al finalizar
+amor machape - temperas al finalizar.

@@ -1,0 +1,290 @@
+---
+const groups = [
+	{
+		name: 'ROJO',
+		color: '#e53e3e',
+		icon: '🔴',
+		members: [
+			'Joel Choque', 'Alicia Alejandro', 'Lizeth Vanesa Quino Quino', 'Josué Adriel Quino Quino',
+			'Sarahi Apaza Romero', 'Marlen Mamani', 'Ninfa Gomes', 'Abimael Rojas Calustro',
+			'Adelaida Villa Rodriguez', 'Mariel Avendaño Guarachi', 'Gilmar Apaza', 'Shirlen Vidal',
+			'Judith Ojeda', 'Sonia Choque Limachi', 'Marcelo Brayan Apaza Copa', 'Jhoana Apaza Copa',
+			'Anatolia Choque', 'Omar Adrian Villca', 'Jared Mamani', 'Dariana Itsel Soto Cruz'
+		]
+	},
+	{
+		name: 'AMARILLO',
+		color: '#d69e2e',
+		icon: '🟡',
+		members: [
+			'Lizbeth Ojeda', 'Ruth Gladis Aguilar', 'Hana Grace Quino Quino', 'Jhonatan Calizaya',
+			'Mirían Bautista Choque', 'Lisbian Gomes', 'Jhenny Gomes', 'Maria Eugenia Cruz',
+			'Mayelin Rojas', 'Joel Elias Achata Lapaca', 'Briana Heredia Flores', 'Soledad Ojeda',
+			'Eduardo Apaza', 'Josué Nahum Mamani Lapaca', 'Luis Sandro Flores', 'Fidelia Valdez',
+			'Joel Mamani', 'Basthy Apaza', 'Jheyson Coyo Flores', 'Asbel Apaza'
+		]
+	},
+	{
+		name: 'AZUL',
+		color: '#3182ce',
+		icon: '🔵',
+		members: [
+			'Gladis Mamani', 'Isai Apaza Romero', 'Abigail Quino Quino', 'Evelin Yacira Chocotea',
+			'Madelein Gomes', 'Benito Chambi', 'Leydi Apaza Romero', 'Joel Elias Achata Lapaca',
+			'Rosalía Maya Mamani Lapaca', 'Sheila Angélica Guarachi Copa', 'Loida Ojeda', 'Erika Ojeda',
+			'Jose Emanuel Ramirez Condori', 'Abdias Villca Ticona', 'Valentina Solange Guarachi Copa',
+			'Ricardo Adrian', 'David Mamani', 'Melina Flores Condori', 'Maxina Villca', 'Neymar Ajuacho'
+		]
+	}
+];
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Listas de Grupos - Retiro Juvenil 2026</title>
+	</head>
+	<body>
+		<div class="container">
+			<a href="/" class="back-link">← Volver a Juegos</a>
+
+			<header>
+				<h1>👥 LISTAS DE GRUPOS</h1>
+				<p class="subtitle">RETIRO JUVENIL CRECIENDO EN GRACIA 2026</p>
+			</header>
+
+			<div class="total-count">
+				<span class="total-number">{groups.reduce((acc, g) => acc + g.members.length, 0)}</span>
+				<span class="total-label">Participantes Totales</span>
+			</div>
+
+			<div class="groups-grid">
+				{groups.map(group => (
+					<div class="group-card" style={`--group-color: ${group.color}`}>
+						<div class="group-header">
+							<span class="group-icon">{group.icon}</span>
+							<h2>GRUPO {group.name}</h2>
+							<span class="group-count">{group.members.length} participantes</span>
+						</div>
+						<div class="group-content">
+							<ol class="group-members">
+								{group.members.map(member => (
+									<li>{member}</li>
+								))}
+							</ol>
+						</div>
+					</div>
+				))}
+			</div>
+
+			<div class="verse-section">
+				<p class="verse">
+					"Porque donde están dos o tres congregados en mi nombre, allí estoy en medio de ellos."
+				</p>
+				<p class="verse-ref">Mateo 18:20</p>
+			</div>
+		</div>
+
+		<style is:global>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+				padding: 2rem 1rem;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.back-link {
+				display: inline-block;
+				color: white;
+				text-decoration: none;
+				font-weight: 600;
+				padding: 0.75rem 1.5rem;
+				background: rgba(255, 255, 255, 0.2);
+				border-radius: 8px;
+				margin-bottom: 1.5rem;
+				transition: background 0.3s;
+			}
+
+			.back-link:hover {
+				background: rgba(255, 255, 255, 0.3);
+			}
+
+			header {
+				text-align: center;
+				margin-bottom: 2rem;
+				color: white;
+			}
+
+			header h1 {
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+			}
+
+			.subtitle {
+				font-size: 1.2rem;
+				opacity: 0.9;
+			}
+
+			.total-count {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 12px;
+				text-align: center;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				margin-bottom: 2rem;
+			}
+
+			.total-number {
+				display: block;
+				font-size: 3rem;
+				font-weight: bold;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.total-label {
+				font-size: 1.1rem;
+				color: #4a5568;
+			}
+
+			.groups-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+				gap: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			.group-card {
+				border: 4px solid var(--group-color);
+				border-radius: 12px;
+				overflow: hidden;
+				background: white;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.group-header {
+				background: var(--group-color);
+				color: white;
+				padding: 1.5rem;
+				text-align: center;
+			}
+
+			.group-icon {
+				font-size: 3rem;
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+
+			.group-header h2 {
+				font-size: 1.5rem;
+				margin: 0.5rem 0;
+			}
+
+			.group-count {
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			.group-content {
+				padding: 1.5rem;
+				max-height: 500px;
+				overflow-y: auto;
+			}
+
+			.group-members {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				counter-reset: member-counter;
+			}
+
+			.group-members li {
+				padding: 0.75rem;
+				margin-bottom: 0.5rem;
+				background: #f7fafc;
+				border-radius: 6px;
+				counter-increment: member-counter;
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				font-size: 1rem;
+				transition: all 0.2s;
+			}
+
+			.group-members li:hover {
+				background: #edf2f7;
+				transform: translateX(5px);
+			}
+
+			.group-members li::before {
+				content: counter(member-counter);
+				background: var(--group-color);
+				color: white;
+				width: 28px;
+				height: 28px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 0.85rem;
+				font-weight: bold;
+				flex-shrink: 0;
+			}
+
+			.verse-section {
+				background: white;
+				padding: 2rem;
+				border-radius: 12px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				text-align: center;
+			}
+
+			.verse {
+				font-size: 1.3rem;
+				font-style: italic;
+				color: #4a5568;
+				line-height: 1.8;
+				margin-bottom: 1rem;
+			}
+
+			.verse-ref {
+				font-weight: 600;
+				color: #667eea;
+				font-size: 1.1rem;
+			}
+
+			@media (max-width: 768px) {
+				header h1 {
+					font-size: 1.8rem;
+				}
+
+				.groups-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.group-content {
+					max-height: 400px;
+				}
+			}
+		</style>
+	</body>
+</html>

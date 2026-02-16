@@ -1,0 +1,484 @@
+---
+const participantes = [
+	// GRUPO ROJO
+	{ nombre: 'Joel', apellido: 'Choque', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'M' },
+	{ nombre: 'Alicia', apellido: 'Alejandro', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Lizeth Vanesa', apellido: 'Quino Quino', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Josué Adriel', apellido: 'Quino Quino', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'M' },
+	{ nombre: 'Sarahi', apellido: 'Apaza Romero', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Marlen', apellido: 'Mamani', iglesia: 'Iglesia eterno Dios', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Ninfa', apellido: 'Gomes', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Abimael', apellido: 'Rojas Calustro', iglesia: '-', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Adelaida', apellido: 'Villa Rodriguez', iglesia: 'Iglesia Gracia de Dios', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Mariel', apellido: 'Avendaño Guarachi', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Gilmar', apellido: 'Apaza Romero', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'M' },
+	{ nombre: 'Shirlen', apellido: 'Vidal', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Judith', apellido: 'Ojeda', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Sonia', apellido: 'Choque Limachi', iglesia: 'iglesia Biblica Alfa y Omega', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Marcelo Brayan', apellido: 'Apaza copa', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'M' },
+	{ nombre: 'Jhoana', apellido: 'Apaza Copa', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Anatolia', apellido: 'choque', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'F' },
+	{ nombre: 'Omar Adrian', apellido: 'Villca', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'M' },
+	{ nombre: 'Jared', apellido: 'Mamani', iglesia: 'Iglesia Bíblica Bet-el', color: 'Rojo', genero: 'M' },
+	{ nombre: 'Dariana Itsel', apellido: 'Soto Cruz', iglesia: 'Iglesia eterno Dios', color: 'Rojo', genero: 'F' },
+	// GRUPO AMARILLO
+	{ nombre: 'Lizbeth', apellido: 'Ojeda', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Ruth Gladis', apellido: 'Aguilar', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Hana Grace', apellido: 'Quino Quino', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Jhonatan', apellido: 'Calizaya', iglesia: 'Iglesia Gracia de Dios', color: 'Amarillo', genero: 'M' },
+	{ nombre: 'Mirían', apellido: 'Bautista Choque', iglesia: 'Iglesia eterno Dios', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Lisbian', apellido: 'Gomes', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Jhenny', apellido: 'Gomes', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Maria Eugenia', apellido: 'Cruz', iglesia: 'Iglesia Biblica Monte de Sion', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Mayelin', apellido: 'Rojas', iglesia: 'Iglesia Biblica Monte de Sion', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Joel Elias', apellido: 'Achata Lapaca', iglesia: 'Iglesia Gracia de Dios', color: 'Amarillo', genero: 'M' },
+	{ nombre: 'Briana', apellido: 'Heredia Flores', iglesia: 'Iglesia Gracia de Dios', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Soledad', apellido: 'Ojeda', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Eduardo', apellido: 'Apaza', iglesia: 'UCE Nueva Jerusalen Oruro', color: 'Amarillo', genero: 'M' },
+	{ nombre: 'Josué Nahum', apellido: 'Mamani Lapaca', iglesia: 'Alto Pagador', color: 'Amarillo', genero: 'M' },
+	{ nombre: 'Luis Sandro', apellido: 'Flores', iglesia: 'iglesia bíblica Berea', color: 'Amarillo', genero: 'M' },
+	{ nombre: 'Fidelia', apellido: 'Valdez', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Joel', apellido: 'Mamani', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'M' },
+	{ nombre: 'Basthy', apellido: 'Apaza', iglesia: 'UCE Nueva Jerusalen Oruro', color: 'Amarillo', genero: 'F' },
+	{ nombre: 'Jheyson', apellido: 'Coyo Flores', iglesia: 'sebastian pagador', color: 'Amarillo', genero: 'M' },
+	{ nombre: 'Asbel', apellido: 'apaza', iglesia: 'Iglesia Bíblica Bet-el', color: 'Amarillo', genero: 'M' },
+	// GRUPO AZUL
+	{ nombre: 'Gladis', apellido: 'Mamani', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'F' },
+	{ nombre: 'Isai', apellido: 'Apaza Romero', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'M' },
+	{ nombre: 'Abigail', apellido: 'Quino Quino', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'F' },
+	{ nombre: 'Evelin Yacira', apellido: 'Chocotea', iglesia: 'Iglesia eterno Dios', color: 'Azul', genero: 'F' },
+	{ nombre: 'Madelein', apellido: 'Gomes', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'F' },
+	{ nombre: 'Benito', apellido: 'Chambi', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'M' },
+	{ nombre: 'Leydi', apellido: 'Apaza Romero', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'F' },
+	{ nombre: 'Joel Elias', apellido: 'Achata Lapaca', iglesia: 'Iglesia Gracia de Dios', color: 'Azul', genero: 'M' },
+	{ nombre: 'Rosalía Maya', apellido: 'Mamani Lapaca', iglesia: 'Iglesia Gracia de Dios', color: 'Azul', genero: 'F' },
+	{ nombre: 'Sheila Angélica', apellido: 'Guarachi Copa', iglesia: 'Alto Pagador', color: 'Azul', genero: 'F' },
+	{ nombre: 'Loida', apellido: 'Ojeda', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'F' },
+	{ nombre: 'Erika', apellido: 'Ojeda', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'F' },
+	{ nombre: 'Jose Emanuel', apellido: 'Ramirez Condori', iglesia: 'Iglesia Sebastian Pagador', color: 'Azul', genero: 'M' },
+	{ nombre: 'Abdias', apellido: 'Villca Ticona', iglesia: 'iglesia Biblica Gracia Soberana', color: 'Azul', genero: 'M' },
+	{ nombre: 'Valentina Solange', apellido: 'Guarachi Copa', iglesia: 'Alto Pagador', color: 'Azul', genero: 'F' },
+	{ nombre: 'Ricardo', apellido: 'Adrian', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'M' },
+	{ nombre: 'David', apellido: 'Mamani', iglesia: 'Iglesia Bíblica Bet-el', color: 'Azul', genero: 'M' },
+	{ nombre: 'Melina', apellido: 'Flores Condori', iglesia: 'Iglesia eterno Dios', color: 'Azul', genero: 'F' },
+	{ nombre: 'Maxina', apellido: 'Villca', iglesia: 'Iglesia Biblica Castillo Fuerte es Nuestro Dios', color: 'Azul', genero: 'F' },
+	{ nombre: 'Neymar', apellido: 'Ajuacho', iglesia: '-', color: 'Azul', genero: 'M' },
+];
+
+const grupoRojo = participantes.filter(p => p.color === 'Rojo');
+const grupoAmarillo = participantes.filter(p => p.color === 'Amarillo');
+const grupoAzul = participantes.filter(p => p.color === 'Azul');
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Listado de Participantes - Retiro Juvenil 2026</title>
+	</head>
+	<body>
+		<div class="container">
+			<a href="/" class="back-link">← Volver a Juegos</a>
+
+			<header>
+				<h1>👥 LISTADO DE PARTICIPANTES</h1>
+				<p class="subtitle">RETIRO JUVENIL 2026</p>
+				<p class="total">60 participantes | 3 grupos</p>
+			</header>
+
+			<!-- TRES COLUMNAS POR COLOR -->
+			<section class="columns-section">
+				<h2 class="section-title">🎨 GRUPOS POR COLOR</h2>
+				<div class="columns-grid">
+					<!-- GRUPO ROJO -->
+					<div class="color-column rojo">
+						<div class="column-header">
+							<span class="color-icon">🔴</span>
+							<h3>GRUPO ROJO</h3>
+							<span class="count">20</span>
+						</div>
+						<ul class="participants-list">
+							{grupoRojo.map(p => (
+								<li>{p.nombre} {p.apellido}</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- GRUPO AMARILLO -->
+					<div class="color-column amarillo">
+						<div class="column-header">
+							<span class="color-icon">🟡</span>
+							<h3>GRUPO AMARILLO</h3>
+							<span class="count">20</span>
+						</div>
+						<ul class="participants-list">
+							{grupoAmarillo.map(p => (
+								<li>{p.nombre} {p.apellido}</li>
+							))}
+						</ul>
+					</div>
+
+					<!-- GRUPO AZUL -->
+					<div class="color-column azul">
+						<div class="column-header">
+							<span class="color-icon">🔵</span>
+							<h3>GRUPO AZUL</h3>
+							<span class="count">20</span>
+						</div>
+						<ul class="participants-list">
+							{grupoAzul.map(p => (
+								<li>{p.nombre} {p.apellido}</li>
+							))}
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- TABLA COMPLETA -->
+			<section class="table-section">
+				<h2 class="section-title">📋 TABLA COMPLETA</h2>
+				<div class="table-container">
+					<table class="participants-table">
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>Iglesia</th>
+								<th>Color</th>
+								<th>Género</th>
+							</tr>
+						</thead>
+						<tbody>
+							{participantes.map(p => (
+								<tr class={`color-${p.color.toLowerCase()}`}>
+									<td>{p.nombre}</td>
+									<td>{p.apellido}</td>
+									<td>{p.iglesia}</td>
+									<td>
+										<span class={`color-badge ${p.color.toLowerCase()}`}>
+											{p.color}
+										</span>
+									</td>
+									<td>{p.genero}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<!-- RESUMEN -->
+			<section class="summary-section">
+				<h2 class="section-title">📊 RESUMEN</h2>
+				<div class="summary-grid">
+					<div class="summary-card">
+						<span class="summary-number">60</span>
+						<span class="summary-label">Total</span>
+					</div>
+					<div class="summary-card rojo">
+						<span class="summary-number">20</span>
+						<span class="summary-label">Rojo</span>
+					</div>
+					<div class="summary-card amarillo">
+						<span class="summary-number">20</span>
+						<span class="summary-label">Amarillo</span>
+					</div>
+					<div class="summary-card azul">
+						<span class="summary-number">20</span>
+						<span class="summary-label">Azul</span>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<style is:global>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+				padding: 2rem 1rem;
+			}
+
+			.container {
+				max-width: 1400px;
+				margin: 0 auto;
+			}
+
+			.back-link {
+				display: inline-block;
+				color: white;
+				text-decoration: none;
+				font-weight: 600;
+				padding: 0.75rem 1.5rem;
+				background: rgba(255, 255, 255, 0.2);
+				border-radius: 8px;
+				margin-bottom: 1.5rem;
+				transition: background 0.3s;
+			}
+
+			.back-link:hover {
+				background: rgba(255, 255, 255, 0.3);
+			}
+
+			header {
+				text-align: center;
+				margin-bottom: 3rem;
+				color: white;
+			}
+
+			header h1 {
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+			}
+
+			.subtitle {
+				font-size: 1.3rem;
+				margin-bottom: 0.5rem;
+				opacity: 0.95;
+			}
+
+			.total {
+				font-size: 1.1rem;
+				opacity: 0.9;
+				font-weight: 600;
+			}
+
+			.section-title {
+				color: white;
+				font-size: 1.8rem;
+				text-align: center;
+				margin-bottom: 1.5rem;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+			}
+
+			/* COLUMNS SECTION */
+			.columns-section {
+				margin-bottom: 3rem;
+			}
+
+			.columns-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.5rem;
+			}
+
+			.color-column {
+				background: white;
+				border-radius: 12px;
+				overflow: hidden;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.column-header {
+				padding: 1.5rem;
+				text-align: center;
+				border-bottom: 2px solid #e0e0e0;
+			}
+
+			.rojo .column-header {
+				background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+				color: white;
+			}
+
+			.amarillo .column-header {
+				background: linear-gradient(135deg, #ffd93d 0%, #f0c929 100%);
+				color: #333;
+			}
+
+			.azul .column-header {
+				background: linear-gradient(135deg, #4dabf7 0%, #339af0 100%);
+				color: white;
+			}
+
+			.color-icon {
+				font-size: 2rem;
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+
+			.column-header h3 {
+				font-size: 1.3rem;
+				margin-bottom: 0.25rem;
+			}
+
+			.count {
+				font-size: 0.9rem;
+				opacity: 0.9;
+			}
+
+			.participants-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.participants-list li {
+				padding: 0.75rem 1.5rem;
+				border-bottom: 1px solid #f0f0f0;
+				font-size: 0.95rem;
+			}
+
+			.participants-list li:last-child {
+				border-bottom: none;
+			}
+
+			.participants-list li:nth-child(even) {
+				background: #f7fafc;
+			}
+
+			/* TABLE SECTION */
+			.table-section {
+				margin-bottom: 3rem;
+			}
+
+			.table-container {
+				background: white;
+				border-radius: 12px;
+				overflow: hidden;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.participants-table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			.participants-table thead {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+			}
+
+			.participants-table th {
+				padding: 1rem;
+				text-align: left;
+				font-weight: 600;
+			}
+
+			.participants-table td {
+				padding: 0.75rem 1rem;
+				border-bottom: 1px solid #f0f0f0;
+			}
+
+			.participants-table tbody tr:hover {
+				background: #f7fafc;
+			}
+
+			.participants-table tbody tr:last-child td {
+				border-bottom: none;
+			}
+
+			.color-badge {
+				display: inline-block;
+				padding: 0.25rem 0.75rem;
+				border-radius: 20px;
+				font-size: 0.85rem;
+				font-weight: 600;
+			}
+
+			.color-badge.rojo {
+				background: #ffe0e0;
+				color: #e03131;
+			}
+
+			.color-badge.amarillo {
+				background: #fff4bf;
+				color: #f08c00;
+			}
+
+			.color-badge.azul {
+				background: #d0ebff;
+				color: #1971c2;
+			}
+
+			/* SUMMARY SECTION */
+			.summary-section {
+				margin-bottom: 2rem;
+			}
+
+			.summary-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1.5rem;
+			}
+
+			.summary-card {
+				background: white;
+				padding: 2rem;
+				border-radius: 12px;
+				text-align: center;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.summary-number {
+				display: block;
+				font-size: 3rem;
+				font-weight: 700;
+				color: #667eea;
+				margin-bottom: 0.5rem;
+			}
+
+			.summary-label {
+				display: block;
+				font-size: 1rem;
+				color: #666;
+				font-weight: 500;
+			}
+
+			.summary-card.rojo .summary-number {
+				color: #e03131;
+			}
+
+			.summary-card.amarillo .summary-number {
+				color: #f08c00;
+			}
+
+			.summary-card.azul .summary-number {
+				color: #1971c2;
+			}
+
+			@media (max-width: 1024px) {
+				.columns-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.summary-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+
+			@media (max-width: 768px) {
+				header h1 {
+					font-size: 1.8rem;
+				}
+
+				.subtitle {
+					font-size: 1.1rem;
+				}
+
+				.participants-table {
+					font-size: 0.85rem;
+				}
+
+				.participants-table th,
+				.participants-table td {
+					padding: 0.5rem;
+				}
+
+				.summary-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</body>
+</html>
